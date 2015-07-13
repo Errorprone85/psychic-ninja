@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="characterizer">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+		<script src="Characterizer.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="Index.html">Home</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="tic-tac-toe.html">Tic tac toe</a></li>
+							<li><a href="#">Two</a></li>
+							<li><a href="#">Three</a></li>
+						</ul>
+					<ul class="nav navbar-nav navbar-right">
+						
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="jumbotron">
+			<h1>Characterizer</h1>
+			<br />
+			<p>Welcome to the characterizer!<br /><br />This app is intended to make character creation and storage easy and fun for D&D players.</p>
+		</div>
+		<div ng-controller="CharacterController as c" class="col-md-4 col-md-offset-4">
+			<form ng-controller="NewCharacterController as newCharCtrl" ng-submit="newCharCtrl.addChar(newChar)">
+				<div class="form-group">
+					<label for="name">Character Name:</label>
+					<input ng-model="newCharCtrl.newChar.name" type="text" class="form-control" id="name" placeholder="Jahn Kriegelstaffa" required>
+				</div>
+				<div class="form-group">
+					<label for="class">Class:</label>
+					<br />
+					<select id="class">
+						<option ng-model="newCharCtrl.newChar.characterClass" value="Warrior">Warrior</option>
+						<option ng-model="newCharCtrl.newChar.characterClass">Mage</option>
+						<option ng-model="newCharCtrl.newChar.characterClass">Rogue</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="attack">Attack:</label>
+					<input ng-model="newCharCtrl.newChar.attack" type="number" class="form-control" id="attack" required>
+				</div>
+				<div class="form-group">
+					<label for="defence">Defence:</label>
+					<input ng-model="newCharCtrl.newChar.defence" type="number" class="form-control" id="defence" required></input>
+				</div>
+				<button type="submit" class="btn bt-lg btn-primary" id="submit-button">Submit</button>
+			</form>
+			<div>
+				<table class="table">
+					<tr>
+						<td>Name:</td>
+						<td>Class:</td>
+						<td>Attack:</td>
+						<td>Defence:</td>
+					</tr>
+					<tr ng-repeat="char in c.character">
+						<td>{{char.name}}</td>
+						<td>{{char.characterClass}}</td>
+						<td>{{char.attack}}</td>
+						<td>{{char.defence}}</td>
+						<td><button class="btn btn-xs" id="select-button">Select</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

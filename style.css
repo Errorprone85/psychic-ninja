@@ -1,0 +1,81 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #808080;
+	color: #F0F0F0;
+}
+
+form {
+	margin: 20px;
+}
+
+form div {
+	padding: 5px;
+}
+
+form div label {
+	margin: 0 10px;
+}
+
+table {
+	margin: 50px 10px;
+	border: 1px solid #fff;
+	background-color: #333333;
+}
+
+table button {
+	background-color: #FF0000;
+}
+
+select {
+	color: #333333;
+	width: 100%;
+	max-width: 180px;
+}
+
+input:required:valid {
+	border: 1px solid green;
+}
+
+input:required:invalid {
+	border: 1px solid red;
+}
+
+.jumbotron {
+	padding: 10px;
+	margin: 0 20%;
+	background-color: #ee8800;
+}
+
+.navbar {
+	background-color: #4C4C4C;
+	color: #fff;
+	padding: 20px;
+	font-size: 1.5em;
+	border: none;
+	border-radius: 0px;
+}
+
+.navbar .navbar-brand {
+	color: #000000;
+	background-color: #aaee00;
+}
+
+.navbar .navbar-brand:hover {
+	background-color: #E60000;
+	color: #fff;
+}
+
+#submit-button {
+	background-color: #3333FF;
+}
+
+#tic-tac-toe {
+	text-align: center;
+	background-color: white;
+}
+
+#tic-tac-toe button {
+	background-color: blue;
+	height: 40px;
+	width: 100px;
+}
